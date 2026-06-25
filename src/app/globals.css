@@ -1,24 +1,169 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* -------------------------------------------------------------------------- */
+/* DESIGN SYSTEM                                                               */
+/* -------------------------------------------------------------------------- */
 
 @theme {
-  /* Colors */
-  --color-background: #0B0B0C;
-  --color-surface: #161618;
+  /* Fonts */
+  --font-clash: var(--font-clash-display);
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+
+  /* Custom Brand Colors */
   --color-gold: #D4AF37;
   --color-gold-light: #E6C76B;
   --color-ivory: #F5F1E8;
-  --color-text: #FAFAFA;
-  --color-muted: #A1A1AA;
-  --color-border: #27272A;
 
-  /* Fonts — references Next.js injected variables */
-  --font-clash: var(--font-clash-display);
-  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  /* Helpful Semantic Tokens */
+  --color-surface: #161618;
+  --color-text: #FAFAFA;
+  --color-muted-custom: #A1A1AA;
 }
 
+/* -------------------------------------------------------------------------- */
+/* SHADCN THEME TOKENS                                                         */
+/* -------------------------------------------------------------------------- */
+
+:root {
+  /* Main Theme */
+  --background: #0b0b0c;
+  --foreground: #fafafa;
+
+  /* Cards / Surfaces */
+  --card: #161618;
+  --card-foreground: #fafafa;
+
+  --popover: #161618;
+  --popover-foreground: #fafafa;
+
+  /* Brand */
+  --primary: #d4af37;
+  --primary-foreground: #0b0b0c;
+
+  /* Secondary */
+  --secondary: #161618;
+  --secondary-foreground: #fafafa;
+
+  /* Muted */
+  --muted: #161618;
+  --muted-foreground: #a1a1aa;
+
+  /* Accent */
+  --accent: #161618;
+  --accent-foreground: #fafafa;
+
+  /* Status */
+  --destructive: #ef4444;
+  --destructive-foreground: #fafafa;
+
+  /* Borders */
+  --border: #27272a;
+  --input: #27272a;
+  --ring: #d4af37;
+
+  /* Radius */
+  --radius: 0.75rem;
+
+  /* Sidebar Tokens (future-proof) */
+  --sidebar: #161618;
+  --sidebar-foreground: #fafafa;
+
+  --sidebar-primary: #d4af37;
+  --sidebar-primary-foreground: #0b0b0c;
+
+  --sidebar-accent: #27272a;
+  --sidebar-accent-foreground: #fafafa;
+
+  --sidebar-border: #27272a;
+  --sidebar-ring: #d4af37;
+}
+
+/* -------------------------------------------------------------------------- */
+/* TAILWIND TOKEN MAPPING                                                      */
+/* -------------------------------------------------------------------------- */
+
+@theme inline {
+  /* Fonts */
+  --font-sans: var(--font-sans);
+
+  /* Core Colors */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+
+  --color-destructive: var(--destructive);
+
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  /* Sidebar */
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(
+    --sidebar-primary-foreground
+  );
+
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(
+    --sidebar-accent-foreground
+  );
+
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  /* Radius Scale */
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+/* -------------------------------------------------------------------------- */
+/* BASE STYLES                                                                 */
+/* -------------------------------------------------------------------------- */
+
 @layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    @apply font-sans scroll-smooth;
+  }
+
   body {
-    background-color: var(--color-background);
-    color: var(--color-text);
+    @apply bg-background text-foreground antialiased;
+  }
+
+  ::selection {
+    background-color: #d4af37;
+    color: #0b0b0c;
   }
 }
