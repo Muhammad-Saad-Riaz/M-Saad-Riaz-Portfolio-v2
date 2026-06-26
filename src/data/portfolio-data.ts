@@ -38,9 +38,11 @@ export const personalInfo = {
 
 export const heroContent = {
   badge: "Available for Freelance Projects",
-  heading: "I Build Modern Websites That Help Businesses Grow",
+  heading: "Building Modern Websites That Help Businesses Grow",
+  headingLine1:"Building Modern Websites",
+  headingHighlight:"That Help Businesses Grow",
   description:
-    "Frontend developer specializing in responsive websites, landing pages, and modern user experiences using Next.js, TypeScript, Tailwind CSS, and Framer Motion.",
+    "Frontend developer crafting responsive websites and landing pages that help businesses build credibility and grow online.",
   primaryCTA: { label: "View My Work", href: "#projects" },
   secondaryCTA: { label: "Hire Me on Fiverr", href: "https://www.fiverr.com/m_saad_webdev" },
 };
@@ -48,10 +50,9 @@ export const heroContent = {
 // ─── Trust Strip ──────────────────────────────────────────────────────────────
 
 export const trustStats = [
-  { label: "Client Project Delivered", value: "1+" },
-  { label: "5-Star Fiverr Review", value: "★★★★★" },
-  { label: "Next.js", value: "Specialist" },
-  { label: "TypeScript", value: "Developer" },
+  { label: "Real Client Work", value: "1+" },
+  { label: "5-Star Fiverr Rating", value: "★★★★★" },
+  { label: "Next.js & TypeScript Specialist", value: "Specialist" },
 ];
 
 // ─── Featured Client Project ──────────────────────────────────────────────────

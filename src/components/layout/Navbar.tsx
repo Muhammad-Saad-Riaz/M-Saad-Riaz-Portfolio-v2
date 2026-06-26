@@ -99,7 +99,7 @@ export default function Navbar(){
           </ul>
 
           {/* Primary CTA */}
-          <Button size='default' className="bg-gold hover:bg-gold-light font-bold font-sans text-background rounded shadow-lg shadow-gold/10 hover:shadow-gold/20" asChild>
+          <Button size='default' className="bg-gold hover:bg-gold-light font-bold font-sans text-background rounded-sm shadow-lg shadow-gold/10 hover:shadow-gold/20" asChild>
             <a 
               href={socialLinks.fiverr}
               target="_blank"
