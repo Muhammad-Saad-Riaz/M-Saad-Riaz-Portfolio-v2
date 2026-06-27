@@ -36,7 +36,7 @@ export default function Hero(){
   };
 
   return(
-    <section className="relative min-h-[calc(100vh-80px)] mt-20 pb-12 flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-[calc(100vh-80px)] mt-20 pb-8 flex items-center justify-center overflow-hidden">
 
       {/* Background Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[40rem] h-[40rem] bg-gold/10 blur-[120px] rounded-full pointer-events-none" />
@@ -51,7 +51,7 @@ export default function Hero(){
 
             {/* Availability Badge */}
             <motion.div variants={itemVariants} className="mb-8 mt-8">
-              <Badge variant="default" className="text-gold bg-gold/5 rounded-full text-sm px-4 border-gold/30 "> 
+              <Badge variant="default" className="text-gold bg-gold/5 rounded-full text-sm px-4 py-4 border-gold/30 "> 
                 <Sparkles className="w-5 h-5 animate-pulse"/>
                 <span>{heroContent.badge}</span>
               </Badge>

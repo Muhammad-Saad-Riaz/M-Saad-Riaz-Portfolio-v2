@@ -57,15 +57,34 @@ export const trustStats = [
 
 // ─── Featured Client Project ──────────────────────────────────────────────────
 
+// export const featuredProject = {
+//   title: "Accounting Portfolio Website",
+//   category: "Client Project",
+//   client: "Muhammad Ali",
+//   description:
+//     "Designed and developed a professional accounting portfolio website for a real client, helping establish a stronger online presence with a premium visual identity, responsive design, downloadable CV integration, and clear service presentation.",
+//   technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
+//   liveUrl: "https://ali-aslam-portfolio.vercel.app",
+//   image: "/projects/accounting-portfolio.webp",
+// };
+
 export const featuredProject = {
+  label: "Featured Client Project",
   title: "Accounting Portfolio Website",
   category: "Client Project",
   client: "Muhammad Ali",
   description:
     "Designed and developed a professional accounting portfolio website for a real client, helping establish a stronger online presence with a premium visual identity, responsive design, downloadable CV integration, and clear service presentation.",
+  features: [
+    "Responsive Design",
+    "Downloadable CV",
+    "Premium UI",
+    "SEO Friendly",
+  ],
   technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
   liveUrl: "https://ali-aslam-portfolio.vercel.app",
-  image: "/projects/accounting-portfolio.webp",
+  image: "/accounting-portfolio.png",
+  browserLabel: "ali-aslam-portfolio.vercel.app",
 };
 
 // ─── Testimonial ──────────────────────────────────────────────────────────────
