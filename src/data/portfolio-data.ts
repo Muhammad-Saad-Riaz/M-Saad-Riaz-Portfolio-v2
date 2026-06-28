@@ -97,6 +97,7 @@ export const testimonial: Testimonial = {
   rating: 5,
 };
 
+
 // ─── Projects ─────────────────────────────────────────────────────────────────
 
 export const projects: Project[] = [
