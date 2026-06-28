@@ -57,17 +57,6 @@ export const trustStats = [
 
 // ─── Featured Client Project ──────────────────────────────────────────────────
 
-// export const featuredProject = {
-//   title: "Accounting Portfolio Website",
-//   category: "Client Project",
-//   client: "Muhammad Ali",
-//   description:
-//     "Designed and developed a professional accounting portfolio website for a real client, helping establish a stronger online presence with a premium visual identity, responsive design, downloadable CV integration, and clear service presentation.",
-//   technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
-//   liveUrl: "https://ali-aslam-portfolio.vercel.app",
-//   image: "/projects/accounting-portfolio.webp",
-// };
-
 export const featuredProject = {
   label: "Featured Client Project",
   title: "Accounting Portfolio Website",
@@ -97,7 +86,61 @@ export const testimonial: Testimonial = {
   rating: 5,
 };
 
+// ─── About ─────────────────────────────────────────────────────────────────
 
+export const aboutData = {
+  label: "About",
+  heading: "Building websites that don't just look premium — they help businesses grow.",
+  paragraphs: [
+    "I am a frontend developer specializing in React, Next.js, and modern CSS architecture. I build scalable, high-performance web applications that bridge the gap between high-end aesthetic design and flawless technical execution.",
+    "My approach is rooted in discipline and structured problem-solving. Whether I'm architecting a complex SaaS dashboard or a high-converting landing page, I focus on delivering digital assets that operate seamlessly and drive real business outcomes."
+  ],
+  location: "Lahore, Pakistan",
+  availability: "Available for Freelance Projects",
+  image: "/profile.png", // Add your professional headshot to the public folder
+  valueCards: [
+    {
+      title: "Clean Architecture",
+      description: "Reusable components and maintainable code built for long-term scalability."
+    },
+    {
+      title: "Performance First",
+      description: "Fast-loading websites optimized for modern browsers and Core Web Vitals."
+    },
+    {
+      title: "Clear Communication",
+      description: "Transparent updates, organized workflows, and on-time project delivery."
+    }
+  ]
+};
+
+// Add to src/data/portfolio-data.ts
+
+export const aboutContent = {
+  heading: "Building websites that don't just look premium — they help businesses grow.",
+  paragraphs: [
+    "I'm a frontend developer based in Lahore, Pakistan, focused on building responsive, high-quality websites using Next.js, TypeScript, Tailwind CSS, and Framer Motion. I work with businesses and individuals who want a professional online presence that actually converts.",
+    "Every project I take on gets the same attention — clear communication, organized workflow, and on-time delivery. I don't just write code; I make sure the final product works for your business.",
+  ],
+  photo: "/profile.png",
+  cards: [
+    {
+      icon: "Code2",
+      title: "Clean Architecture",
+      description: "Reusable components, scalable structure, and maintainable code built to grow with your business.",
+    },
+    {
+      icon: "Zap",
+      title: "Performance First",
+      description: "Fast-loading websites optimized for Core Web Vitals and real-world user experience.",
+    },
+    {
+      icon: "MessageCircle",
+      title: "Clear Communication",
+      description: "Transparent updates, organized workflow, and on-time delivery on every project.",
+    },
+  ],
+};
 // ─── Projects ─────────────────────────────────────────────────────────────────
 
 export const projects: Project[] = [
