@@ -4,6 +4,7 @@ export interface Project {
   title: string;
   type: "Client Project" | "Personal Project";
   description: string;
+  highlights: string[];
   technologies: string[];
   liveUrl: string;
   githubUrl: string;
@@ -88,34 +89,6 @@ export const testimonial: Testimonial = {
 
 // ─── About ─────────────────────────────────────────────────────────────────
 
-export const aboutData = {
-  label: "About",
-  heading: "Building websites that don't just look premium — they help businesses grow.",
-  paragraphs: [
-    "I am a frontend developer specializing in React, Next.js, and modern CSS architecture. I build scalable, high-performance web applications that bridge the gap between high-end aesthetic design and flawless technical execution.",
-    "My approach is rooted in discipline and structured problem-solving. Whether I'm architecting a complex SaaS dashboard or a high-converting landing page, I focus on delivering digital assets that operate seamlessly and drive real business outcomes."
-  ],
-  location: "Lahore, Pakistan",
-  availability: "Available for Freelance Projects",
-  image: "/profile.png", // Add your professional headshot to the public folder
-  valueCards: [
-    {
-      title: "Clean Architecture",
-      description: "Reusable components and maintainable code built for long-term scalability."
-    },
-    {
-      title: "Performance First",
-      description: "Fast-loading websites optimized for modern browsers and Core Web Vitals."
-    },
-    {
-      title: "Clear Communication",
-      description: "Transparent updates, organized workflows, and on-time project delivery."
-    }
-  ]
-};
-
-// Add to src/data/portfolio-data.ts
-
 export const aboutContent = {
   heading: "Building websites that don't just look premium — they help businesses grow.",
   paragraphs: [
@@ -149,27 +122,48 @@ export const projects: Project[] = [
     type: "Personal Project",
     description:
       "Fully-featured SaaS admin dashboard with analytics, billing management, and a scalable component architecture.",
+    highlights: [
+      "Advanced data tables with TanStack Table",
+      "Real-time analytics with Recharts",
+      "Command palette with CMD+K",
+      "Fully responsive across all devices",
+    ],
     technologies: ["Next.js", "TypeScript", "Recharts", "Tailwind CSS", "Framer Motion"],
     liveUrl: "https://aimate-admin.vercel.app",
     githubUrl: "https://github.com/Muhammad-Saad-Riaz/AImate-admin-dashboard",
+    image: "/aimate-dashboard.png",
   },
   {
     title: "AImate – AI SaaS Landing Page",
     type: "Personal Project",
     description:
       "High-converting landing page with advanced animations and a polished dark-mode aesthetic.",
+    highlights: [
+      "99–100 Lighthouse performance score",
+      "Framer Motion scroll animations",
+      "Conversion-focused layout",
+      "Mobile-first responsive design",
+    ],
     technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
     liveUrl: "https://aimate-ai.vercel.app",
     githubUrl: "https://github.com/Muhammad-Saad-Riaz/AImate-AI_Landing_Page",
+    image: "/aimate-landing.png",
   },
   {
     title: "EMAE – Premium Fragrance E-commerce",
     type: "Personal Project",
     description:
       "Full e-commerce frontend with product engine, real-time cart, and dynamic review system.",
+    highlights: [
+      "Real-time cart and product filtering",
+      "Dynamic review and rating system",
+      "GPU-accelerated animations",
+      "Scalable component architecture",
+    ],
     technologies: ["React", "TypeScript", "Tailwind CSS", "TanStack Query"],
     liveUrl: "https://emae.vercel.app",
     githubUrl: "https://github.com/Muhammad-Saad-Riaz/EMAE-Fragrance-Store",
+    image: "/emae1.png",
   },
 ];
 
