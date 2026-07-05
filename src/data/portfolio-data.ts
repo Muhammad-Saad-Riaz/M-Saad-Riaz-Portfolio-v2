@@ -20,6 +20,7 @@ export interface Testimonial {
 
 export interface ProcessStep {
   step: number;
+  icon: string;
   title: string;
   description: string;
 }
@@ -172,25 +173,57 @@ export const projects: Project[] = [
 export const processSteps: ProcessStep[] = [
   {
     step: 1,
+    icon: "Search",
     title: "Discovery",
-    description: "Understanding your business goals, target audience, and project requirements.",
+    description: "Understand your business goals, requirements, and project scope before writing any code.",
   },
   {
     step: 2,
+    icon: "ClipboardList",
     title: "Planning",
-    description: "Defining structure, content flow, and user experience strategy before writing code.",
+    description: "Define the structure, technology, timeline, and implementation approach.",
   },
   {
     step: 3,
+    icon: "Code2",
     title: "Development",
-    description: "Building responsive, performant interfaces with clean and scalable component architecture.",
+    description: "Build responsive, maintainable interfaces with regular progress updates throughout.",
   },
   {
     step: 4,
-    title: "Deployment",
-    description: "Testing, optimization, and deployment — with post-launch support included.",
+    icon: "Rocket",
+    title: "Launch",
+    description: "Test thoroughly, deploy smoothly, and provide post-launch support if needed.",
   },
 ];
+
+export const processContent = {
+  label: "Process",
+  heading: "How I Work",
+  subheading: "Every project follows a clear process focused on communication, quality, and delivering reliable results.",
+  steps: [
+    {
+      id: "01",
+      title: "Discovery",
+      description: "Understand goals, requirements, and project scope before writing any code."
+    },
+    {
+      id: "02",
+      title: "Planning",
+      description: "Define the structure, technology, timeline, and implementation approach."
+    },
+    {
+      id: "03",
+      title: "Development",
+      description: "Build responsive, maintainable interfaces with regular progress updates."
+    },
+    {
+      id: "04",
+      title: "Launch",
+      description: "Test thoroughly, deploy smoothly, and provide post-launch support if needed."
+    }
+  ]
+};
 
 // ─── Tech Stack ───────────────────────────────────────────────────────────────
 
