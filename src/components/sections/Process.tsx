@@ -80,7 +80,7 @@ export default function Process() {
                 </div>
 
                 {/* Title */}
-                <div className="font-clash font-semibold tracking-wide text-lg text-ivory mb-3">
+                <div className="font-clash font-semibold tracking-wide text-lg text-ivory mb-3 group-hover:text-gold transition-colors duration-300 ">
                   {step.title}
                 </div>
 

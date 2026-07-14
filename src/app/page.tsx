@@ -5,6 +5,7 @@ import Testimonial from "@/components/sections/Testimonial";
 import About from "@/components/sections/About";
 import Projects from "@/components/sections/Projects"
 import Process from "@/components/sections/Process";
+import TechStack from "@/components/sections/TechStack";
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
       <About/>
       <Projects/>
       <Process/>
+      <TechStack/>
     
     </>
   );

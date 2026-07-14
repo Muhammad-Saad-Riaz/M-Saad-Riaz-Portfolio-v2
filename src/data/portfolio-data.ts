@@ -228,8 +228,42 @@ export const processContent = {
 // ─── Tech Stack ───────────────────────────────────────────────────────────────
 
 export const techStack = {
-  frontend: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
-  animation: ["Framer Motion"],
-  data: ["TanStack Table", "Recharts", "Zod", "React Hook Form"],
-  tools: ["Git", "GitHub", "Vercel"],
+  frontend: {
+    icon: "Monitor",
+    label: "Frontend",
+    techs: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Framer Motion", "Shadcn UI"],
+  },
+  languages: {
+    icon: "Code2",
+    label: "Languages",
+    techs: ["JavaScript", "TypeScript", "HTML5", "CSS3"],
+  },
+  tools: {
+    icon: "Hammer",
+    label: "Tools",
+    techs: ["Git", "GitHub", "VS Code", "Vercel"],
+  },
+};
+
+export const techStackContent = {
+  label: "Tech Stack",
+  heading: "Technologies I Use",
+  subheading: "Modern technologies and tools I use to build responsive, scalable, and maintainable web applications.",
+  categories: [
+    {
+      title: "Frontend",
+      icon: "Monitor",
+      skills: ["React", "Next.js", "TypeScript", "Tailwind CSS" , "Framer Motion"]
+    },
+    {
+      title: "Languages",
+      icon: "Code2",
+      skills: ["JavaScript", "TypeScript", "HTML5", "CSS3"]
+    },
+    {
+      title: "Tools",
+      icon: "Wrench",
+      skills: ["Git", "GitHub", "VS Code", "Vercel"]
+    }
+  ]
 };
