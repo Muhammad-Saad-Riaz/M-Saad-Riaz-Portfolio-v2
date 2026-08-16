@@ -36,7 +36,7 @@ export default function Hero(){
   };
 
   return(
-    <section className="relative min-h-[calc(100vh-80px)] mt-20 pb-8 flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-[calc(100vh-80px)] pt-20 pb-8 flex items-center justify-center overflow-hidden">
 
       {/* Background Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[40rem] h-[40rem] bg-gold/10 blur-[120px] rounded-full pointer-events-none" />

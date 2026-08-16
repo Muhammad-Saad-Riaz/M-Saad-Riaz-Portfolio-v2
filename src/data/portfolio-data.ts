@@ -227,24 +227,6 @@ export const processContent = {
 
 // ─── Tech Stack ───────────────────────────────────────────────────────────────
 
-export const techStack = {
-  frontend: {
-    icon: "Monitor",
-    label: "Frontend",
-    techs: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Framer Motion", "Shadcn UI"],
-  },
-  languages: {
-    icon: "Code2",
-    label: "Languages",
-    techs: ["JavaScript", "TypeScript", "HTML5", "CSS3"],
-  },
-  tools: {
-    icon: "Hammer",
-    label: "Tools",
-    techs: ["Git", "GitHub", "VS Code", "Vercel"],
-  },
-};
-
 export const techStackContent = {
   label: "Tech Stack",
   heading: "Technologies I Use",
@@ -267,3 +249,22 @@ export const techStackContent = {
     }
   ]
 };
+
+// ─── Social Links ───────────────────────────────────────────────────────────────
+export const socialLinks = {
+  github: "https://github.com/Muhammad-Saad-Riaz",
+  linkedin: "https://linkedin.com/in/muhammad-saad-riaz",
+  fiverr: "https://fiverr.com/m_saad_webdev",
+  email: "msaadriaz11@gmail.com",
+  whatsapp: "https://wa.me/923264737989",
+  facebook: "https://www.facebook.com/profile.php?id=61581438106978",
+};
+
+// export const footerContent = {
+//   copyright: `© ${new Date().getFullYear()} Muhammad Saad Riaz. All rights reserved.`,
+// };
+
+// export const footerContent = {
+//   text: "© 2026 Saad. All rights reserved.",
+//   tagline: "Building premium digital experiences."
+// };

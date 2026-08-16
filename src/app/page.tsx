@@ -6,6 +6,7 @@ import About from "@/components/sections/About";
 import Projects from "@/components/sections/Projects"
 import Process from "@/components/sections/Process";
 import TechStack from "@/components/sections/TechStack";
+import Contact from "@/components/sections/Contact";
 
 export default function Home() {
   return (
@@ -17,7 +18,7 @@ export default function Home() {
       <Projects/>
       <Process/>
       <TechStack/>
-    
+      <Contact/>
     </>
   );
 }
