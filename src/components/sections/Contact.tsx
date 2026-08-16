@@ -1,7 +1,8 @@
 "use client"
 
 import { motion } from "framer-motion";
-import { socialLinks, personalInfo } from "@/data/portfolio-data";
+import { personalInfo } from "@/data/portfolio-data";
+import { socialLinks } from "@/constants/social-links";
 import { Mail, ExternalLink, } from "lucide-react";
 import { LiaLinkedin } from "react-icons/lia";
 import { FaFacebook, FaGithub, FaWhatsapp } from "react-icons/fa";
@@ -112,7 +113,7 @@ export default function Contact() {
                     href={socialLinks.fiverr}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-6 py-3 rounded-md bg-gold text-background font-sans font-semibold text-sm hover:bg-gold-light transition-colors duration-200 shadow-lg shadow-gold/10 hover:shadow-gold/20"
+                    className="inline-flex items-center gap-2 px-6 py-3 rounded-md bg-gold text-background font-sans font-semibold text-sm hover:bg-gold-light transition-colors duration-200 shadow-lg shadow-gold/10 hover:shadow-gold/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
                   >
                     Open Fiverr Profile
                     <ExternalLink size={14} />
@@ -151,7 +152,7 @@ export default function Contact() {
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
                       transition={{ duration: 0.4, delay: i * 0.08 }}
-                      className="group flex items-center gap-4 p-4 rounded-xl border border-border bg-background/50 hover:bg-background hover:border-gold/40 transition-colors duration-300"
+                      className="group flex items-center gap-4 p-4 rounded-xl border border-border bg-background/50 hover:bg-background hover:border-gold/40 transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
                     >
                       {/* Icon */}
                       <div className="flex items-center justify-center w-10 h-10 rounded-full bg-surface border border-border group-hover:border-gold/30 transition-colors duration-300 shrink-0">
@@ -199,7 +200,7 @@ export default function Contact() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={social.label}
-                    className="flex items-center justify-center w-10 h-10 rounded-full border border-border bg-background text-muted-foreground hover:border-gold/40 hover:text-gold hover:scale-110 transition-all duration-200"
+                    className="flex items-center justify-center w-10 h-10 rounded-full border border-border bg-background text-muted-foreground hover:border-gold/40 hover:text-gold hover:scale-110 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
                   >
                     <Icon size={16} />
                   </a>
