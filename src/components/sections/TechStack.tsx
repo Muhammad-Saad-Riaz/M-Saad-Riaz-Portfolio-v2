@@ -2,7 +2,7 @@
 
 import { motion, Variants } from "framer-motion";
 import { techStackContent } from "@/data/portfolio-data";
-import { LucideIcon, Monitor, Code2, Wrench, CheckIcon, CheckCircle2 } from "lucide-react";
+import { LucideIcon, Monitor, Code2, Wrench, CheckIcon, CheckCircle2, ShoppingBag } from "lucide-react";
 
 const containerVariants: Variants = {
   hidden: {},
@@ -25,6 +25,7 @@ const iconMap: Record<string, LucideIcon> = {
   Monitor,
   Code2,
   Wrench,
+  ShoppingBag,
 };
 
 export default function Techstack(){

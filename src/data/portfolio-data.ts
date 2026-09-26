@@ -7,7 +7,7 @@ export interface Project {
   highlights: string[];
   technologies: string[];
   liveUrl: string;
-  githubUrl: string;
+  githubUrl?: string;
   image?: string;
 }
 
@@ -23,6 +23,35 @@ export interface ProcessStep {
   icon: string;
   title: string;
   description: string;
+}
+
+export interface ExperienceItem {
+  company: string;
+  role: string;
+  brand: string;
+  description: string;
+  areas: {
+    title: string;
+    description: string;
+  }[];
+  technologies: string[];
+  liveUrl?: string;
+}
+
+export interface FeaturedProject {
+  label: string;
+  title: string;
+  category: string;
+  company: string;
+  brand: string;
+  role: string;
+  architecture: string;
+  description: string;
+  features: string[];
+  technologies: string[];
+  liveUrl: string;
+  image: string;
+  browserLabel: string;
 }
 
 // ─── Personal Info ────────────────────────────────────────────────────────────
@@ -44,39 +73,97 @@ export const heroContent = {
   headingLine1:"Building Modern Websites",
   headingHighlight:"That Help Businesses Grow",
   description:
-    "Frontend developer crafting responsive websites and landing pages that help businesses build credibility and grow online.",
-  primaryCTA: { label: "View My Work", href: "#projects" },
+    "Frontend developer building responsive websites and e-commerce experiences that help businesses establish credibility, reach customers, and grow online.",
+  primaryCTA: { label: "View My Work", href: "#work" },
   secondaryCTA: { label: "Hire Me on Fiverr", href: "https://www.fiverr.com/m_saad_webdev" },
 };
 
 // ─── Trust Strip ──────────────────────────────────────────────────────────────
 
 export const trustStats = [
-  { label: "Real Client Work", value: "1+" },
+  { label: "Real Client Work", value: "2" },
+  { label: "Production E-commerce", value: "1", },
   { label: "5-Star Fiverr Rating", value: "★★★★★" },
-  { label: "Next.js & TypeScript Specialist", value: "Specialist" },
 ];
 
 // ─── Featured Client Project ──────────────────────────────────────────────────
 
 export const featuredProject = {
-  label: "Featured Client Project",
-  title: "Accounting Portfolio Website",
-  category: "Client Project",
-  client: "Muhammad Ali",
+  label: "Featured Client Work",
+  title: "ZaraNwa — Headless Fashion E-commerce",
+  category: "Women's Fashion · E-commerce",
+  company: "Asad Traders",
+  brand: "ZaraNwa",
+  role: "Frontend Developer & Digital Marketer",
+  architecture: "Next.js + Shopify Storefront API",
   description:
-    "Designed and developed a professional accounting portfolio website for a real client, helping establish a stronger online presence with a premium visual identity, responsive design, downloadable CV integration, and clear service presentation.",
+    "Built the complete customer-facing e-commerce storefront for ZaraNwa, a Pakistani women's fashion brand, using a custom headless Shopify architecture. The project combines premium product presentation with real Shopify commerce, responsive customer experiences, SEO, and conversion tracking for Meta advertising.",
   features: [
-    "Responsive Design",
-    "Downloadable CV",
-    "Premium UI",
-    "SEO Friendly",
+    "Headless Shopify storefront",
+    "Shopify products, variants & collections",
+    "Shopify Cart & Checkout",
+    "Responsive product experience",
+    "Meta Pixel & conversion tracking",
+    "SEO & structured data",
   ],
-  technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
-  liveUrl: "https://ali-aslam-portfolio.vercel.app",
-  image: "/accounting-portfolio.png",
-  browserLabel: "ali-aslam-portfolio.vercel.app",
+  technologies: ["Next.js", "React", "TypeScript", "Shopify Storefront API", "Tailwind CSS", "Framer Motion"],
+  liveUrl: "https://zaranwa.com",
+  image: "/zaranwa-featured1.png",
+  browserLabel: "zaranwa.com",
 };
+
+// ─── Professional Experience ──────────────────────────────────────────────────
+
+export const experienceContent = {
+  label: "Experience",
+  heading: "Professional Experience",
+  subheading:
+    "Working on a real fashion brand gave me experience beyond development — from building the storefront to supporting the business's digital growth.",
+  items: [
+    {
+      company: "Asad Traders",
+      role: "Frontend Developer & Digital Marketer",
+      brand: "ZaraNwa — Women's Fashion Brand",
+      description:
+        "Worked on ZaraNwa's digital presence, building its production e-commerce storefront with a custom headless Shopify architecture while also managing digital marketing activities through Meta Ads and website conversion tracking.",
+      areas: [
+        {
+          title: "E-commerce Development",
+          description:
+            "Built the complete customer-facing storefront using Next.js, TypeScript, Tailwind CSS, shadcn/ui, Framer Motion, and Shopify's Storefront API.",
+        },
+        {
+          title: "Commerce Integration",
+          description:
+            "Implemented Shopify-powered products, variants, collections, cart functionality, checkout flow, size guides, and responsive product experiences.",
+        },
+        {
+          title: "Digital Marketing",
+          description:
+            "Managed Meta advertising campaigns and supported the brand's customer-acquisition funnel through website-side tracking and conversion measurement.",
+        },
+        {
+          title: "Analytics & Conversion Tracking",
+          description:
+            "Implemented Meta Pixel event tracking for key customer actions such as PageView, ViewContent, and AddToCart.",
+        },
+      ],
+      technologies: [
+        "Next.js",
+        "React",
+        "TypeScript",
+        "Tailwind CSS",
+        "shadcn/ui",
+        "Framer Motion",
+        "Shopify Storefront API",
+        "Meta Pixel",
+        "Meta Ads",
+      ],
+      liveUrl: "https://zaranwa.com/",
+    } satisfies ExperienceItem,
+  ],
+};
+
 
 // ─── Testimonial ──────────────────────────────────────────────────────────────
 
@@ -91,38 +178,65 @@ export const testimonial: Testimonial = {
 // ─── About ─────────────────────────────────────────────────────────────────
 
 export const aboutContent = {
-  heading: "Building websites that don't just look premium — they help businesses grow.",
+  heading: "Building digital experiences with a focus on quality, clarity, and real-world use.",
   paragraphs: [
-    "I'm a frontend developer based in Lahore, Pakistan, focused on building responsive, high-quality websites using Next.js, TypeScript, Tailwind CSS, and Framer Motion. I work with businesses and individuals who want a professional online presence that actually converts.",
-    "Every project I take on gets the same attention — clear communication, organized workflow, and on-time delivery. I don't just write code; I make sure the final product works for your business.",
+    "I'm a frontend developer based in Lahore, Pakistan, focused on building responsive, high-quality websites and e-commerce experiences. My work spans freelance client projects and production web applications, including a headless Shopify storefront built for ZaraNwa, a Pakistani women's fashion brand.",
+    "Alongside development, I've also worked on digital marketing and Meta advertising, which has given me a broader understanding of what happens after a website goes live — from customer acquisition and conversion tracking to the experience users have on the site itself.",
   ],
   photo: "/profile.png",
   cards: [
     {
       icon: "Code2",
-      title: "Clean Architecture",
-      description: "Reusable components, scalable structure, and maintainable code built to grow with your business.",
+      title: "Production-Minded",
+      description: "Clean component architecture, reusable UI, and practical implementation decisions built for real-world products.",
     },
     {
       icon: "Zap",
-      title: "Performance First",
-      description: "Fast-loading websites optimized for Core Web Vitals and real-world user experience.",
+      title: "Performance & UX",
+      description: "Responsive, accessible, fast-loading interfaces with careful attention to usability, interactions, and mobile experience.",
     },
     {
       icon: "MessageCircle",
       title: "Clear Communication",
-      description: "Transparent updates, organized workflow, and on-time delivery on every project.",
+      description: "Transparent updates, organized workflow, and a collaborative approach from planning through launch.",
     },
   ],
 };
 // ─── Projects ─────────────────────────────────────────────────────────────────
 
+export const projectsContent = {
+  label: "Selected Projects",
+  heading: "More Work",
+  subheading:
+    "A selection of client and personal projects showcasing business websites, SaaS applications, and modern frontend experiences.",
+};
+
 export const projects: Project[] = [
+  {
+    title: "Muhammad Ali — Accounting Portfolio Website",
+    type: "Client Project",
+    description:
+      "A professional portfolio website built for a real accounting and finance professional, focused on credibility, responsive presentation, and clear communication of his experience and services.",
+    highlights: [
+      "Responsive design across mobile and desktop",
+      "Professional service and experience presentation",
+      "Downloadable CV integration",
+      "Performance and SEO optimization",
+    ],
+    technologies: [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "Framer Motion",
+    ],
+    liveUrl: "https://ali-aslam-portfolio.vercel.app",
+    image: "/accounting-portfolio.png",
+  },
   {
     title: "AImate – AI SaaS Dashboard",
     type: "Personal Project",
     description:
-      "Fully-featured SaaS admin dashboard with analytics, billing management, and a scalable component architecture.",
+      "A fully-featured SaaS admin dashboard with analytics, billing management, advanced data tables, and a scalable component architecture.",
     highlights: [
       "Advanced data tables with TanStack Table",
       "Real-time analytics with Recharts",
@@ -138,7 +252,7 @@ export const projects: Project[] = [
     title: "AImate – AI SaaS Landing Page",
     type: "Personal Project",
     description:
-      "High-converting landing page with advanced animations and a polished dark-mode aesthetic.",
+      "A polished SaaS landing page focused on clear product communication, responsive design, and deliberate motion-based interactions.",
     highlights: [
       "99–100 Lighthouse performance score",
       "Framer Motion scroll animations",
@@ -150,22 +264,22 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/Muhammad-Saad-Riaz/AImate-AI_Landing_Page",
     image: "/aimate-landing.png",
   },
-  {
-    title: "EMAE – Premium Fragrance E-commerce",
-    type: "Personal Project",
-    description:
-      "Full e-commerce frontend with product engine, real-time cart, and dynamic review system.",
-    highlights: [
-      "Real-time cart and product filtering",
-      "Dynamic review and rating system",
-      "GPU-accelerated animations",
-      "Scalable component architecture",
-    ],
-    technologies: ["React", "TypeScript", "Tailwind CSS", "TanStack Query"],
-    liveUrl: "https://emae.vercel.app",
-    githubUrl: "https://github.com/Muhammad-Saad-Riaz/EMAE-Fragrance-Store",
-    image: "/emae1.png",
-  },
+  // {
+  //   title: "EMAE – Premium Fragrance E-commerce",
+  //   type: "Personal Project",
+  //   description:
+  //     "Full e-commerce frontend with product engine, real-time cart, and dynamic review system.",
+  //   highlights: [
+  //     "Real-time cart and product filtering",
+  //     "Dynamic review and rating system",
+  //     "GPU-accelerated animations",
+  //     "Scalable component architecture",
+  //   ],
+  //   technologies: ["React", "TypeScript", "Tailwind CSS", "TanStack Query"],
+  //   liveUrl: "https://emae.vercel.app",
+  //   githubUrl: "https://github.com/Muhammad-Saad-Riaz/EMAE-Fragrance-Store",
+  //   image: "/emae1.png",
+  // },
 ];
 
 // ─── Process ──────────────────────────────────────────────────────────────────
@@ -230,12 +344,12 @@ export const processContent = {
 export const techStackContent = {
   label: "Tech Stack",
   heading: "Technologies I Use",
-  subheading: "Modern technologies and tools I use to build responsive, scalable, and maintainable web applications.",
+  subheading: "Modern technologies and tools I use to build responsive websites, e-commerce experiences, and maintainable web applications.",
   categories: [
     {
       title: "Frontend",
       icon: "Monitor",
-      skills: ["React", "Next.js", "TypeScript", "Tailwind CSS" , "Framer Motion"]
+      skills: ["React", "Next.js", "Tailwind CSS" , "Framer Motion"]
     },
     {
       title: "Languages",
@@ -243,9 +357,14 @@ export const techStackContent = {
       skills: ["JavaScript", "TypeScript", "HTML5", "CSS3"]
     },
     {
-      title: "Tools",
+      title: "E-commerce & UI",
+      icon: "ShoppingBag",
+      skills: ["Shopify","Shopify Storefront API","Shopify Cart API","shadcn/ui"],
+    },
+    {
+      title: "Tools & Infrastructure",
       icon: "Wrench",
-      skills: ["Git", "GitHub", "VS Code", "Vercel"]
+      skills: ["Git", "GitHub", "VS Code", "Vercel", "Hostinger"]
     }
   ]
 };

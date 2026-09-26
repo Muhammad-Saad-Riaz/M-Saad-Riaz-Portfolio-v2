@@ -25,7 +25,7 @@ export default function Projects() {
         >
           <span className="inline-flex items-center gap-3 text-xs font-sans font-semibold tracking-widest uppercase text-gold">
             <span className="w-8 h-px bg-gold/50" />
-            Personal Projects
+            Selected Projects
           </span>
         </motion.div>
 
@@ -37,8 +37,7 @@ export default function Projects() {
           transition={{ duration: 0.5, delay: 0.1 }}
           className="font-sans text-base text-muted-foreground mb-16 max-w-xl"
         >
-          A selection of personal projects built to explore modern frontend
-          architecture, user experience, and scalable interfaces.
+          A selection of client and personal projects showcasing business websites, SaaS applications, and modern frontend experiences.
         </motion.p>
 
         {/* Project List */}
