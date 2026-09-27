@@ -81,8 +81,8 @@ export const heroContent = {
 // ─── Trust Strip ──────────────────────────────────────────────────────────────
 
 export const trustStats = [
-  { label: "Real Client Work", value: "2" },
-  { label: "Production E-commerce", value: "1", },
+  { label: "Real Client Work", value: "✓" },
+  { label: "Production E-commerce", value: "✓", },
   { label: "5-Star Fiverr Rating", value: "★★★★★" },
 ];
 
