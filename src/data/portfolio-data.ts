@@ -106,7 +106,7 @@ export const featuredProject = {
     "Meta Pixel & conversion tracking",
     "SEO & structured data",
   ],
-  technologies: ["Next.js", "React", "TypeScript", "Shopify Storefront API", "Tailwind CSS", "Framer Motion"],
+  technologies: ["Next.js", "TypeScript", "Shopify Storefront API", "Tailwind CSS", "Framer Motion"],
   liveUrl: "https://zaranwa.com",
   image: "/zaranwa-featured1.png",
   browserLabel: "zaranwa.com",
