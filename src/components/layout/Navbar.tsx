@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import { personalInfo } from "@/data/portfolio-data";
 import { socialLinks } from "@/constants/social-links";
 import { navLinks } from "@/constants/navigation";
@@ -65,26 +66,36 @@ export default function Navbar(){
   }, [isOpen])
 
   return(
-    <header className={`fixed top-0 left-0 right-0 z-50 flex items-center transition-all duration-300 ${
+    <header className={`fixed top-0 left-0 right-0 h-20 z-50 flex items-center transition-all duration-300 ${
       scrolled
-        ? 'bg-background/80 backdrop-blur-xl border-b border-border h-20'
-        : 'bg-transparent h-20'
+        ? 'bg-background/80 backdrop-blur-xl border-b border-border'
+        : 'bg-transparent'
     }`}>
       <div className="max-w-6xl w-full mx-auto px-6 flex items-center justify-between">
 
         {/* Name / Logo */}
         <Link
           href='/'
-          className="relative group z-50"
           onClick={()=>setIsOpen(false)}
+          className="group relative z-50 flex items-center gap-2.5"
+          aria-label={`${personalInfo.fullName} - Home`}
         >
-          <span className="text-lg md:text-xl font-clash tracking-wide font-semibold text-text group-hover:text-gold transition-colors duration-200">
+          <Image
+            src="/MSR_white.png"
+            alt=""
+            width={34}
+            height={34}
+            priority
+            className="h-8 w-8 object-contain md:h-9 md:w-9 transition-opacity duration-200 group-hover:opacity-85"
+          />
+
+          <span className="font-clash text-lg font-semibold tracking-wide text-text transition-colors duration-200 group-hover:text-gold md:text-xl">
             {personalInfo.fullName}
           </span>
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className="hidden md:flex items-center gap-8" aria-label="Primary navigation">
           <ul className="flex items-center gap-8">
             {navLinks.map((link)=>(
               <li key={link.label}>
@@ -114,7 +125,9 @@ export default function Navbar(){
         <button 
           onClick={()=>setIsOpen(prev=>!prev)}
           className="md:hidden z-50 p-2 -mr-2 text-text hover:text-gold transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-gold"
-          aria-label="Toggle Menu"
+          aria-label={isOpen ? "Close menu" : "Open menu"}
+          aria-expanded={isOpen}
+          aria-controls="mobile-navigation"
         >
           {isOpen ? <X className="w-6 h-6"/> : <Menu className="h-6 w-6"/>}
         </button>
