@@ -275,7 +275,7 @@ export default function FeaturedProject() {
             {/* Title */}
             <motion.h2
               variants={itemVariants}
-              className="mb-5 max-w-xl font-clash text-3xl font-semibold leading-[1.08] tracking-tight text-ivory md:text-4xl lg:text-[2.7rem]"
+              className="mb-5 max-w-xl font-clash text-3xl font-semibold leading-[1.08] tracking-wide text-ivory md:text-4xl lg:text-[2.7rem]"
             >
               {featuredProject.title}
             </motion.h2>

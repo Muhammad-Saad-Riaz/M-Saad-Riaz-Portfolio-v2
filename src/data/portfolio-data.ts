@@ -31,6 +31,7 @@ export interface ExperienceItem {
   brand: string;
   description: string;
   areas: {
+    icon: string;
     title: string;
     description: string;
   }[];
@@ -118,7 +119,7 @@ export const experienceContent = {
   label: "Experience",
   heading: "Professional Experience",
   subheading:
-    "Working on a real fashion brand gave me experience beyond development — from building the storefront to supporting the business's digital growth.",
+    "A production e-commerce project where I worked across frontend development, Shopify integration, digital marketing, and conversion tracking.",
   items: [
     {
       company: "Asad Traders",
@@ -128,22 +129,26 @@ export const experienceContent = {
         "Worked on ZaraNwa's digital presence, building its production e-commerce storefront with a custom headless Shopify architecture while also managing digital marketing activities through Meta Ads and website conversion tracking.",
       areas: [
         {
+          icon: "ShoppingBag",
           title: "E-commerce Development",
           description:
             "Built the complete customer-facing storefront using Next.js, TypeScript, Tailwind CSS, shadcn/ui, Framer Motion, and Shopify's Storefront API.",
         },
         {
+          icon: "ShoppingCart",
           title: "Commerce Integration",
           description:
             "Implemented Shopify-powered products, variants, collections, cart functionality, checkout flow, size guides, and responsive product experiences.",
         },
         {
+          icon: "Megaphone",
           title: "Digital Marketing",
           description:
             "Managed Meta advertising campaigns and supported the brand's customer-acquisition funnel through website-side tracking and conversion measurement.",
         },
         {
-          title: "Analytics & Conversion Tracking",
+          icon: "ChartNoAxesCombined",
+          title: "Conversion Tracking & Analytics",
           description:
             "Implemented Meta Pixel event tracking for key customer actions such as PageView, ViewContent, and AddToCart.",
         },
