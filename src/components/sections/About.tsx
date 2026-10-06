@@ -2,7 +2,13 @@
 
 import { motion } from "framer-motion";
 import { aboutContent, personalInfo } from "@/data/portfolio-data";
-import { Code2, Zap, MessageCircle, MapPin, LucideIcon } from "lucide-react";
+import {
+  Code2,
+  Zap,
+  MessageCircle,
+  MapPin,
+  LucideIcon,
+} from "lucide-react";
 import Image from "next/image";
 
 const iconMap: Record<string, LucideIcon> = {
@@ -13,125 +19,158 @@ const iconMap: Record<string, LucideIcon> = {
 
 export default function About() {
   return (
-    <section id="about" className="py-12 px-6">
-      <div className="max-w-6xl mx-auto">
+    <section id="about" className="px-6 py-12">
+      <div className="mx-auto max-w-6xl">
         {/* Section Label */}
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="mb-16"
+          className="mb-14"
         >
-          <span className="inline-flex items-center gap-3 text-xs font-sans font-semibold tracking-widest uppercase text-gold">
-            <span className="w-8 h-px bg-gold/50" />
+          <span className="inline-flex items-center gap-3 font-sans text-xs font-semibold uppercase tracking-[0.2em] text-gold">
+            <span className="h-px w-8 bg-gold/50" />
             About
           </span>
         </motion.div>
 
-        {/* Top Grid- Text + Photo */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-12 items-start mb-16">
-          {/* left - text */}
+        {/* Introduction + Photo */}
+        <div className="mb-16 grid grid-cols-1 items-start gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
+          {/* Text */}
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
+            initial={{ opacity: 0, x: -24 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-80px" }}
-            transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
+            transition={{
+              duration: 0.6,
+              ease: [0.25, 0.1, 0.25, 1],
+            }}
             className="order-2 lg:order-1"
           >
-            <h2 className="font-clash font-semibold text-3xl md:text-4xl text-ivory leading-tight mb-6">
+            <h2 className="mb-7 max-w-2xl font-clash text-3xl font-semibold leading-[1.08] tracking-tight text-ivory md:text-4xl lg:text-[2.7rem]">
               {aboutContent.heading}
             </h2>
 
-            <div className="flex flex-col gap-4 mb-8">
-              {aboutContent.paragraphs.map((para, i) => (
+            <div className="mb-9 flex max-w-2xl flex-col gap-5">
+              {aboutContent.paragraphs.map((paragraph, index) => (
                 <p
-                  key={i}
-                  className="font-sans text-base text-muted-foreground leading-relaxed"
+                  key={index}
+                  className="font-sans text-base leading-7 text-muted-custom"
                 >
-                  {para}
+                  {paragraph}
                 </p>
               ))}
             </div>
 
-            {/* Location + Availability */}
-            <div className="flex flex-col gap-2">
-              <span className="inline-flex items-center gap-2 text-sm font-sans text-muted-foreground">
-                <MapPin size={14} className="text-gold shrink-0" />
-                {personalInfo.location}
-              </span>
-              <span className="inline-flex items-center gap-2 text-sm font-sans text-muted-foreground">
-                <span className="relative flex h-2.5 w-2.5">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-gold/90 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-gold"></span>
+            {/* Personal Details */}
+            <div className="flex flex-col gap-3">
+              <div className="flex items-center gap-2.5 font-sans text-sm text-muted-custom">
+                <MapPin
+                  size={15}
+                  strokeWidth={1.75}
+                  className="shrink-0 text-gold"
+                  aria-hidden="true"
+                />
+
+                <span>{personalInfo.location}</span>
+              </div>
+
+              <div className="flex items-center gap-2.5 font-sans text-sm text-muted-custom">
+                <span className="relative flex h-2.5 w-2.5 shrink-0">
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-gold/70 opacity-70" />
+                  <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-gold" />
                 </span>
-                {personalInfo.availability}
-              </span>
+
+                <span>{personalInfo.availability}</span>
+              </div>
             </div>
           </motion.div>
 
-          {/* Right - Photo */}
+          {/* Photo */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
+            initial={{ opacity: 0, scale: 0.97 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true, margin: "-80px" }}
-            transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
-            className="order-1 lg:order-2 flex justify-center lg:justify-end"
+            transition={{
+              duration: 0.7,
+              ease: [0.25, 0.1, 0.25, 1],
+            }}
+            className="order-1 flex justify-center lg:order-2 lg:justify-end"
           >
             <div className="relative">
-              {/* Gold Glow */}
+              {/* Subtle Gold Glow */}
               <div
                 aria-hidden="true"
-                className="absolute -inset-3 bg-gold/10 blur-[40px] rounded-2xl pointer-events-none"
+                className="pointer-events-none absolute -inset-4 rounded-2xl bg-gold/8 blur-[45px]"
               />
 
-              {/* Photo */}
-              <div className="relative w-64 h-64 md:w-72 md:h-72 rounded-2xl overflow-hidden border border-border shadow-2xl">
+              {/* Portrait */}
+              <div className="relative h-64 w-64 overflow-hidden rounded-2xl border border-border bg-surface shadow-2xl md:h-72 md:w-72">
                 <Image
                   src={aboutContent.photo}
-                  alt={`Photo of ${personalInfo.fullName}`}
+                  alt={`Portrait of ${personalInfo.fullName}`}
                   fill
                   className="object-cover object-top"
                   sizes="(max-width: 768px) 256px, 288px"
                 />
               </div>
 
-              {/* Decorative corner accent */}
+              {/* Corner Accent */}
               <div
                 aria-hidden="true"
-                className="absolute -bottom-3 -right-3 w-16 h-16 border-b-2 border-r-2 border-gold/30 rounded-br-2xl pointer-events-none"
+                className="pointer-events-none absolute -bottom-3 -right-3 h-16 w-16 rounded-br-2xl border-b-2 border-r-2 border-gold/30"
               />
             </div>
           </motion.div>
         </div>
 
-        {/* Divider line */}
-        <div className="w-full h-px bg-border mb-16" />
+        {/* Divider */}
+        <div
+          aria-hidden="true"
+          className="mb-16 h-px w-full bg-border"
+        />
 
-        {/* Value Card */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          {aboutContent.cards.map((card, i) => {
+        {/* Value Pillars */}
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
+          {aboutContent.cards.map((card) => {
             const Icon = iconMap[card.icon];
+
             return (
-              <motion.div
-                key={i}
+              <motion.article
+                key={card.title}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-80px" }}
-                transition={{ duration: 0.5, ease: "easeOut", delay: i * 0.1 }}
-                // whileHover={{y:-4}}
-                className="flex flex-col p-8 rounded-2xl border border-border bg-surface/50 hover:bg-surface hover:border-gold/30 group transition-colors duration-300"
+                transition={{
+                  duration: 0.5,
+                  ease: [0.25, 0.1, 0.25, 1],
+                }}
+                whileHover={{ y: -4 }}
+                className="group rounded-2xl border border-border bg-surface/40 p-7 transition-colors duration-300 hover:border-gold/25 hover:bg-surface"
               >
-                <div className="mb-6 flex items-center justify-center w-12 h-12 rounded-full bg-background border border-border group-hover:scale-110 transition-transform duration-300">
-                  <Icon className="w-5 h-5 text-gold" />
+                {/* Icon */}
+                <div className="mb-6 flex h-11 w-11 items-center justify-center rounded-full border border-border bg-background transition-transform duration-300 group-hover:scale-105">
+                  {Icon && (
+                    <Icon
+                      size={19}
+                      strokeWidth={1.7}
+                      className="text-gold"
+                      aria-hidden="true"
+                    />
+                  )}
                 </div>
-                <h3 className="font-clash font-medium text-xl text-ivory mb-3 tracking-wide">
+
+                {/* Title */}
+                <h3 className="mb-3 font-clash text-xl font-medium tracking-wide text-ivory">
                   {card.title}
                 </h3>
-                <p className="font-sans text-muted-foreground leading-relaxed">
+
+                {/* Description */}
+                <p className="font-sans text-sm leading-6 text-muted-custom">
                   {card.description}
                 </p>
-              </motion.div>
+              </motion.article>
             );
           })}
         </div>
