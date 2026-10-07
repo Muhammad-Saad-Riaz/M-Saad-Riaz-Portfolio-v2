@@ -50,7 +50,7 @@ export default function Contact() {
 
       {/* Outer Glow */}
       <div className="relative max-w-6xl mx-auto">
-        <div
+          <div
             aria-hidden="true"
             className="pointer-events-none absolute inset-0 flex items-center justify-center"
           >
@@ -63,7 +63,7 @@ export default function Contact() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
-            className="relative rounded-3xl border border-border bg-surface p-10 md:p-16 lg:p-20 text-center"
+            className="relative rounded-3xl border border-border bg-surface px-7 py-10 text-center md:px-12 md:py-14 lg:px-16 lg:py-16"
           >
 
             {/* Section Label */}
@@ -77,13 +77,14 @@ export default function Contact() {
 
             {/* Heading */}
             <h2 className="font-clash font-semibold text-4xl md:text-5xl text-ivory leading-tight mb-6">
-              Ready to Build Something Great?
+              Have a Project in Mind?
             </h2>
 
             {/* Description */}
             <p className="font-sans text-base text-muted-foreground leading-relaxed mb-10 max-w-lg mx-auto">
-              Have a project in mind, need a landing page, or want a modern
-              website for your business? Let's talk.
+              Whether you need a business website, a polished landing page, or
+              an e-commerce experience, let&apos;s build something that works
+              for your goals.
             </p>
 
             {/* Two column layout */}
@@ -106,8 +107,8 @@ export default function Contact() {
                     View my Fiverr profile
                   </h3>
                   <p className="font-sans text-sm text-muted-foreground mb-6 leading-relaxed">
-                    Browse my gigs, see pricing, and place an order directly.
-                    5-star rated with fast delivery.
+                    Browse my available services, review pricing, and place an
+                    order directly through Fiverr.
                   </p>
                   <a
                     href={socialLinks.fiverr}
