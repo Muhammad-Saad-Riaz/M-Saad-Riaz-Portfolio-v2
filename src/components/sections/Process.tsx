@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { processSteps } from "@/data/portfolio-data";
+import { processContent } from "@/data/portfolio-data";
 import { Search, ClipboardList, Code2, Rocket, LucideIcon } from "lucide-react";
 
 const iconMap: Record<string, LucideIcon> = {
@@ -22,11 +22,11 @@ export default function Process() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="mb-4"
+          className="mb-14"
         >
-          <span className="inline-flex items-center gap-3 uppercase text-gold text-xs font-semibold tracking-widest">
+          <span className="inline-flex items-center gap-3 uppercase text-gold text-xs font-semibold tracking-[0.2em]">
             <span className="h-px w-8 bg-gold/50" />
-            Process
+            {processContent.label}
           </span>
         </motion.div>
 
@@ -38,7 +38,7 @@ export default function Process() {
           transition={{ duration: 0.5 }}
           className="mb-4 text-3xl lg:text-4xl font-clash font-semibold tracking-wider leading-tight max-w-xl text-ivory"
         >
-          How I Work
+          {processContent.heading}
         </motion.div>
 
         {/* Subtitle */}
@@ -46,19 +46,18 @@ export default function Process() {
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.5, delay: 0.1, }}
           className="font-sans text-muted-foreground text-base mb-12 max-w-xl leading-relaxed"
         >
-          Every project follows a clear process focused on communication,
-          quality, and delivering reliable results.
+          {processContent.subheading}
         </motion.div>
 
         {/* Steps Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {processSteps.map((step, i) => {
+          {processContent.steps.map((step, i) => {
             const Icon = iconMap[step.icon];
             return (
-              <motion.div
+              <motion.article
                 key={step.step}
                 initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -69,26 +68,26 @@ export default function Process() {
                 {/* Faint background step number */}
                 <span
                   aria-hidden="true"
-                  className="absolute top-4 right-4 font-clash font-semibold text-7xl text-gold/10 group-hover:text-gold/20 pointer-events-none leading-none select-none transition-colors duration-300"
+                  className="absolute top-4 right-4 font-clash font-semibold text-7xl text-gold/8 group-hover:text-gold/14 pointer-events-none leading-none select-none transition-colors duration-300"
                 >
-                  0{step.step}
+                  {step.step}
                 </span>
 
                 {/* Icon */}
-                <div className="mb-5 bg-background flex items-center justify-center h-11 w-11 rounded-full border border-border group-hover:border-gold/30 transition-colors duration-300">
-                  <Icon size={18} className="text-gold" />
+                <div className="relative z-10 mb-7 flex h-11 w-11 items-center justify-center rounded-full border border-border bg-background transition-colors duration-300 group-hover:border-gold/30">
+                  <Icon size={18} strokeWidth={1.7} className="text-gold" aria-hidden="true" />
                 </div>
 
                 {/* Title */}
-                <div className="font-clash font-semibold tracking-wide text-lg text-ivory mb-3 group-hover:text-gold transition-colors duration-300 ">
+                <h3 className="relative z-10 mb-3 font-clash text-lg font-semibold tracking-wide text-ivory transition-colors duration-300 group-hover:text-gold">
                   {step.title}
-                </div>
+                </h3>
 
                 {/* Description */}
-                <p className=" font-sans text-muted-foreground text-sm leading-relaxed">
+                <p className="relative z-10 font-sans text-sm leading-6 text-muted-custom">
                   {step.description}
                 </p>
-              </motion.div>
+              </motion.article>
             );
           })}
         </div>

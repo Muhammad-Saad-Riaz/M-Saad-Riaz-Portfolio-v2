@@ -289,32 +289,32 @@ export const projects: Project[] = [
 
 // ─── Process ──────────────────────────────────────────────────────────────────
 
-export const processSteps: ProcessStep[] = [
-  {
-    step: 1,
-    icon: "Search",
-    title: "Discovery",
-    description: "Understand your business goals, requirements, and project scope before writing any code.",
-  },
-  {
-    step: 2,
-    icon: "ClipboardList",
-    title: "Planning",
-    description: "Define the structure, technology, timeline, and implementation approach.",
-  },
-  {
-    step: 3,
-    icon: "Code2",
-    title: "Development",
-    description: "Build responsive, maintainable interfaces with regular progress updates throughout.",
-  },
-  {
-    step: 4,
-    icon: "Rocket",
-    title: "Launch",
-    description: "Test thoroughly, deploy smoothly, and provide post-launch support if needed.",
-  },
-];
+// export const processSteps: ProcessStep[] = [
+//   {
+//     step: 1,
+//     icon: "Search",
+//     title: "Discovery",
+//     description: "Understand your business goals, requirements, and project scope before writing any code.",
+//   },
+//   {
+//     step: 2,
+//     icon: "ClipboardList",
+//     title: "Planning",
+//     description: "Define the structure, technology, timeline, and implementation approach.",
+//   },
+//   {
+//     step: 3,
+//     icon: "Code2",
+//     title: "Development",
+//     description: "Build responsive, maintainable interfaces with regular progress updates throughout.",
+//   },
+//   {
+//     step: 4,
+//     icon: "Rocket",
+//     title: "Launch",
+//     description: "Test thoroughly, deploy smoothly, and provide post-launch support if needed.",
+//   },
+// ];
 
 export const processContent = {
   label: "Process",
@@ -322,22 +322,26 @@ export const processContent = {
   subheading: "Every project follows a clear process focused on communication, quality, and delivering reliable results.",
   steps: [
     {
-      id: "01",
+      step: "01",
+      icon: "Search",
       title: "Discovery",
       description: "Understand goals, requirements, and project scope before writing any code."
     },
     {
-      id: "02",
+      step: "02",
+      icon: "ClipboardList",
       title: "Planning",
       description: "Define the structure, technology, timeline, and implementation approach."
     },
     {
-      id: "03",
+      step: "03",
+      icon: "Code2",
       title: "Development",
       description: "Build responsive, maintainable interfaces with regular progress updates."
     },
     {
-      id: "04",
+      step: "04",
+      icon: "Rocket",
       title: "Launch",
       description: "Test thoroughly, deploy smoothly, and provide post-launch support if needed."
     }
