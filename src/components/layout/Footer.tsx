@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import { personalInfo } from "@/data/portfolio-data";
 import { socialLinks } from "@/constants/social-links";
 import { navLinks } from "@/constants/navigation";
@@ -28,16 +29,30 @@ export default function Footer(){
           
           {/* Brand */}
           <div className="flex flex-col gap-2">
-            <span className="font-clash font-semibold text-xl text-ivory tracking-tight">
-              {personalInfo.fullName}
-            </span>
-            <p className="font-sans text-xs text-muted-foreground max-w-55 leading-relaxed">
+            <a
+              href="/"
+              aria-label={`${personalInfo.fullName} - Home`}
+              className="group inline-flex items-center gap-2.5"
+            >
+              <Image
+                src="/MSR_white.png"
+                alt=""
+                width={34}
+                height={34}
+                className="h-8 w-8 object-contain transition-opacity duration-200 group-hover:opacity-85 md:h-9 md:w-9"
+              />
+
+              <span className="font-clash text-lg font-semibold tracking-tight text-ivory transition-colors duration-200 group-hover:text-gold md:text-xl">
+                {personalInfo.fullName}
+              </span>
+            </a>
+            <p className="font-sans text-xs text-muted-foreground max-w-80 leading-relaxed pl-12">
               Frontend developer crafting modern, responsive web experiences.
             </p>
           </div>
 
           {/* Nav links */}
-          <nav>
+          <nav aria-label="Footer navigation">
             <ul className="flex items-center gap-6 flex-wrap">
               {navLinks.map((link)=>(
                 <li key={link.href}>
@@ -83,6 +98,7 @@ export default function Footer(){
 
           {/* Back to Top */}
           <button
+            type="button"
             onClick={scrollToTop}
             className="group flex items-center gap-3 font-sans text-sm font-medium text-muted-custom hover:text-gold transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
             aria-label="Scroll to top"
