@@ -2,7 +2,7 @@
 
 import { motion, Variants } from "framer-motion";
 import { techStackContent } from "@/data/portfolio-data";
-import { LucideIcon, Monitor, Code2, Wrench, CheckIcon, CheckCircle2, ShoppingBag } from "lucide-react";
+import { LucideIcon, Monitor, Code2, Wrench, CheckCircle2, ShoppingBag } from "lucide-react";
 
 const containerVariants: Variants = {
   hidden: {},
@@ -38,9 +38,9 @@ export default function Techstack(){
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5 }}
-                  className="mb-4"
+                  className="mb-14"
                 >
-                  <span className="inline-flex items-center gap-3 uppercase text-gold text-xs font-semibold tracking-widest">
+                  <span className="inline-flex items-center gap-3 uppercase text-gold text-xs font-semibold tracking-[0.2em]">
                     <span className="h-px w-8 bg-gold/50"/>
                     {techStackContent.label}
                   </span>
@@ -74,7 +74,7 @@ export default function Techstack(){
                   initial="hidden"
                   whileInView="visible"
                   viewport={{once:true,margin:"-80px"}}
-                  className="grid grid-cols-1 md:grid-cols-3 gap-6"
+                  className="grid grid-cols-1 gap-5 md:grid-cols-2"
                 >
                   {techStackContent.categories.map((category)=>{
                     const Icon= iconMap[category.icon]
@@ -82,13 +82,26 @@ export default function Techstack(){
                       <motion.div
                         key={category.title}
                         variants={itemVariants}
-                        className="flex flex-col p-6 bg-surface/50 border border-border rounded-lg group hover:border-gold/40 hover:bg-surface/80 transition-colors duration-300"
+                        className="group relative flex min-h-[230px] flex-col overflow-hidden rounded-xl border border-border bg-surface/40 p-7 transition-colors duration-300 hover:border-gold/25 hover:bg-surface md:p-8"
                       >
+                        {/* subtle decorative corner */}
+                        <div
+                          aria-hidden="true"
+                          className="pointer-events-none absolute -right-8 -top-8 h-24 w-24 rounded-full bg-gold/4 blur-2xl transition-opacity duration-300 group-hover:bg-gold/7"
+                        />
+
                         {/* Category Title + Icon */}
-                        <div className="flex items-center gap-4 mb-8 pb-4 border-b border-border/50">
+                        <div className="relative z-10 mb-7 flex items-center gap-4 border-b border-border/60 pb-5">
                           {/* Icon */}
-                          <div className="flex items-center justify-center h-10 w-10 bg-background border border-border rounded-sm group-hover:border-gold/40 transition-colors duration-300">
-                            <Icon size={18} className="text-gold"/>
+                          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-sm border border-border bg-background transition-colors duration-300 group-hover:border-gold/30">
+                            {Icon && (
+                              <Icon
+                                size={18}
+                                strokeWidth={1.7}
+                                className="text-gold"
+                                aria-hidden="true"
+                              />
+                            )}
                           </div>
                           <h3 className="font-clash text-ivory font-semibold text-xl tracking-wider group-hover:text-gold transition-colors duration-300">
                             {category.title}
@@ -96,13 +109,13 @@ export default function Techstack(){
                         </div>
 
                         {/* Skills Badges */}
-                        <div className="flex flex-wrap gap-2.5">
+                        <div className="relative z-10 flex flex-wrap gap-2.5">
                           {category.skills.map((skill)=>(
                             <div
                               key={skill}
-                              className="inline-flex gap-2 items-center font-sans text-sm text-foreground bg-background border border-border px-3 py-1.5 rounded-md hover:border-gold/40 hover:text-gold hover:bg-background/60 transition-colors duration-200 select-none"
+                              className="inline-flex select-none items-center gap-2 rounded-md border border-border bg-background px-3 py-1.5 font-sans text-sm text-text transition-colors duration-200 hover:border-gold/35 hover:bg-background/70 hover:text-gold"
                             >
-                              <CheckCircle2 size={14} className="text-gold shrink-0"/>
+                              <CheckCircle2 size={14} strokeWidth={1.6} className="text-gold shrink-0" aria-hidden="true"/>
                               {skill}
                             </div>
                           ))}
