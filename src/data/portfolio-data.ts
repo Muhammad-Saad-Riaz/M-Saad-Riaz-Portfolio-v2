@@ -109,7 +109,7 @@ export const featuredProject = {
   ],
   technologies: ["Next.js", "TypeScript", "Shopify Storefront API", "Tailwind CSS", "Framer Motion"],
   liveUrl: "https://zaranwa.com",
-  image: "/zaranwa-featured1.png",
+  image: "/zaranwa-featured2.png",
   browserLabel: "zaranwa.com",
 };
 
