@@ -49,6 +49,11 @@ const clashDisplay = localFont({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
 
+  // Google Search Console ownership verification
+  verification: {
+    google: "UIQgYb7_ZWqmkY5jEwWY6AZG0SteRIdftlAOI7s9qIY",
+  },
+
   title: {
     default: "Muhammad Saad Riaz | Frontend Developer & E-commerce Developer",
     template: "%s | Muhammad Saad Riaz",
