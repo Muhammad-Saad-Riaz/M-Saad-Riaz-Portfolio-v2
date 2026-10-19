@@ -88,7 +88,6 @@ export const metadata: Metadata = {
   },
 
   // Metadata for link previews on platforms that use Open Graph.
-  // We'll add the custom Open Graph image in the next SEO step.
   openGraph: {
     type: "website",
     locale: "en_PK",
@@ -96,14 +95,27 @@ export const metadata: Metadata = {
     siteName: SITE_NAME,
     title: "Muhammad Saad Riaz | Frontend Developer & E-commerce Developer",
     description: SITE_DESCRIPTION,
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Muhammad Saad Riaz — Frontend Developer specializing in web development and e-commerce",
+      },
+    ],
   },
 
   // Twitter/X sharing metadata.
-  // The custom social preview image will be wired in during the image step.
   twitter: {
     card: "summary_large_image",
     title: "Muhammad Saad Riaz | Frontend Developer & E-commerce Developer",
     description: SITE_DESCRIPTION,
+    images: [
+      {
+        url: "/og-image.png",
+        alt: "Muhammad Saad Riaz — Frontend Developer",
+      },
+    ],
   },
 };
 
