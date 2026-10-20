@@ -9,6 +9,9 @@ export interface Project {
   liveUrl: string;
   githubUrl?: string;
   image?: string;
+
+  // Describes the screenshot for accessibility and image SEO.
+  imageAlt?: string;
 }
 
 export interface Testimonial {
@@ -236,6 +239,7 @@ export const projects: Project[] = [
     ],
     liveUrl: "https://ali-aslam-portfolio.vercel.app",
     image: "/accounting-portfolio.png",
+    imageAlt: "Homepage of Muhammad Ali's accounting and finance portfolio website",
   },
   {
     title: "AImate – AI SaaS Dashboard",
@@ -252,6 +256,7 @@ export const projects: Project[] = [
     liveUrl: "https://aimate-admin.vercel.app",
     githubUrl: "https://github.com/Muhammad-Saad-Riaz/AImate-admin-dashboard",
     image: "/aimate-dashboard.png",
+    imageAlt: "AImate AI SaaS dashboard showing analytics widgets and data tables",
   },
   {
     title: "AImate – AI SaaS Landing Page",
@@ -268,6 +273,7 @@ export const projects: Project[] = [
     liveUrl: "https://aimate-ai.vercel.app",
     githubUrl: "https://github.com/Muhammad-Saad-Riaz/AImate-AI_Landing_Page",
     image: "/aimate-landing.png",
+    imageAlt: "AImate AI SaaS landing page showcasing its product features and interface",
   },
   // {
   //   title: "EMAE – Premium Fragrance E-commerce",

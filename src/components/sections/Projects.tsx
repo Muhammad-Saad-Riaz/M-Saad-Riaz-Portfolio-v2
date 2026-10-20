@@ -379,7 +379,7 @@ export default function Projects() {
                       <div className="relative aspect-[16/10] w-full overflow-hidden">
                         <Image
                           src={project.image}
-                          alt={`${project.title} project screenshot`}
+                          alt={project.imageAlt ?? `${project.title} project screenshot`}
                           fill
                           loading="lazy"
                           className="object-cover object-top transition-transform duration-500 group-hover:scale-[1.02]"
